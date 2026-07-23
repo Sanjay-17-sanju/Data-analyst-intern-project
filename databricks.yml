@@ -1,0 +1,19 @@
+# This is a Declarative Automation Bundle definition for Data Analyst Intership Proj 1(Infotact Sol).
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: Data Analyst Intership Proj 1(Infotact Sol)
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-dc58b86b-97ca.cloud.databricks.com
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: https://dbc-dc58b86b-97ca.cloud.databricks.com
