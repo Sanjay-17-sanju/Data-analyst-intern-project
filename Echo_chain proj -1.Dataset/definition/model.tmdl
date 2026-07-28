@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["bronze_manufacturing1","bronze_warranty1"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.126.1261.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table bronze_manufacturing1
+ref table DateTableTemplate_48450a12-3ade-4cef-b62d-0c5061b99bcf
+ref table LocalDateTable_d3c80f67-d24f-4a0d-b776-772aedfc6e94
+ref table bronze_warranty1
+ref table LocalDateTable_38633c76-4504-422e-8505-ed88f233704f
+

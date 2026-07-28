@@ -1,0 +1,113 @@
+table bronze_warranty1
+	lineageTag: d0d77536-0e91-413b-b084-67ca9f13f3f8
+
+	column SKU_ID
+		dataType: string
+		lineageTag: 260682b4-3ec4-4fac-80fb-623ee2cac315
+		summarizeBy: none
+		sourceColumn: SKU_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Name
+		dataType: string
+		lineageTag: 3cfa804b-0e7a-4936-bad8-3b20284aa723
+		summarizeBy: none
+		sourceColumn: Product_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: 563a9ddb-427d-4ad5-971b-4ea421837dcf
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 7e890c0b-eeb3-44e5-835b-237806a2906c
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturing_Date
+		dataType: string
+		lineageTag: 397d3ab1-b5de-4e2b-8402-b402c28071c5
+		summarizeBy: none
+		sourceColumn: Manufacturing_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component
+		dataType: string
+		lineageTag: e56fdc61-a7f8-408b-aa5b-d6ca7765a575
+		summarizeBy: none
+		sourceColumn: Component
+
+		annotation SummarizationSetBy = Automatic
+
+	column Component_Cost
+		dataType: string
+		lineageTag: fae6fdf8-5adf-44ee-b31d-4bb07a790859
+		summarizeBy: none
+		sourceColumn: Component_Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warranty_Period
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c0e6a60-62c1-4004-a2ce-95fca2909e18
+		summarizeBy: sum
+		sourceColumn: Warranty_Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Failure_Rate
+		dataType: double
+		lineageTag: a4337e3c-2973-4cb1-9a5b-2efb5be41418
+		summarizeBy: sum
+		sourceColumn: Failure_Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Manufacturing_Cost
+		dataType: string
+		lineageTag: 8ec82ceb-ab02-4f6b-b29a-522b1b4920e5
+		summarizeBy: none
+		sourceColumn: Manufacturing_Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingest_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a89b55f9-211a-44a8-ad89-b0e93d5ee722
+		summarizeBy: none
+		sourceColumn: ingest_timestamp
+
+		variation Variation
+			isDefault
+			relationship: dd6f5513-252e-4e94-aebb-154e9593c1a3
+			defaultHierarchy: LocalDateTable_38633c76-4504-422e-8505-ed88f233704f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bronze_warranty1 = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
+				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
+				    bronze_warranty1_Table = bronze_Schema{[Name="bronze_warranty1",Kind="Table"]}[Data]
+				in
+				    bronze_warranty1_Table
+
+	annotation PBI_ResultType = Table
+

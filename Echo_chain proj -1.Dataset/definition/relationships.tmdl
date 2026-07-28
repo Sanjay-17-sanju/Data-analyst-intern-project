@@ -1,0 +1,16 @@
+relationship 38fce60d-b2a9-4b51-a53b-73eebb9ebdaf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_manufacturing1.ingest_timestamp
+	toColumn: LocalDateTable_d3c80f67-d24f-4a0d-b776-772aedfc6e94.Date
+
+relationship dd6f5513-252e-4e94-aebb-154e9593c1a3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_warranty1.ingest_timestamp
+	toColumn: LocalDateTable_38633c76-4504-422e-8505-ed88f233704f.Date
+
+relationship 96bf2490-15ce-4e05-aeae-09343be5c800
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: bronze_manufacturing1.SKU_ID
+	toColumn: bronze_warranty1.SKU_ID
+

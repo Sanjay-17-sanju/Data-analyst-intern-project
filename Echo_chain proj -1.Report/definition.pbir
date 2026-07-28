@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Echo_chain proj -1.Dataset"
+    },
+    "byConnection": null
+  }
+}
