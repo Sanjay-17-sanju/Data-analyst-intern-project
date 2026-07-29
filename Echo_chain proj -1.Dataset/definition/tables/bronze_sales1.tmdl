@@ -1,0 +1,123 @@
+table bronze_sales1
+	lineageTag: f5fa92bb-6670-4c7c-854c-a14547445189
+
+	column Sales_ID
+		dataType: string
+		lineageTag: 758489b4-7f4e-489a-bf26-dd0531f6c94e
+		summarizeBy: none
+		sourceColumn: Sales_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU_ID
+		dataType: string
+		lineageTag: e50fb288-6a31-443f-a32c-03b5d4d10393
+		summarizeBy: none
+		sourceColumn: SKU_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sale_Date
+		dataType: string
+		lineageTag: 5e1508a0-8b4f-49ee-905f-d7a010fa8883
+		summarizeBy: none
+		sourceColumn: Sale_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store_ID
+		dataType: string
+		lineageTag: 76718959-c973-4f32-bf5b-182673c718b6
+		summarizeBy: none
+		sourceColumn: Store_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Channel
+		dataType: string
+		lineageTag: 28f97a34-2cff-49c0-ade2-28de2e1af8e0
+		summarizeBy: none
+		sourceColumn: Sales_Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_ID
+		dataType: string
+		lineageTag: 27c4131c-5f05-41a6-8755-bb0aac3cef86
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 28068500-a633-440e-b3fd-870eebdfbd41
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit_Price
+		dataType: double
+		lineageTag: b78c7bde-1873-4147-acc1-f255033d0da5
+		summarizeBy: sum
+		sourceColumn: Unit_Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discount
+		dataType: double
+		lineageTag: fd6dc6c5-c611-42d5-ae9a-6d9bcc78903b
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Final_Amount
+		dataType: string
+		lineageTag: 28e466a3-f453-4413-9e9b-fadc4c6b947d
+		summarizeBy: none
+		sourceColumn: Final_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Payment_Method
+		dataType: string
+		lineageTag: 2ddcbfab-c497-4ce6-9889-b8c78613139f
+		summarizeBy: none
+		sourceColumn: Payment_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingest_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 647926f9-94a3-4965-8b2d-95d22b55da2c
+		summarizeBy: none
+		sourceColumn: ingest_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 552dfe79-ff77-4d15-977e-a4932fd142ca
+			defaultHierarchy: LocalDateTable_8ac59ed8-0521-4b33-8c9a-2fa9c340596f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bronze_sales1 = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
+				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
+				    bronze_sales1_Table = bronze_Schema{[Name="bronze_sales1",Kind="Table"]}[Data]
+				in
+				    bronze_sales1_Table
+
+	annotation PBI_ResultType = Table
+

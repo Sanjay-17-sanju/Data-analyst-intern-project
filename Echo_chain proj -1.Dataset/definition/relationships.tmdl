@@ -14,3 +14,19 @@ relationship 96bf2490-15ce-4e05-aeae-09343be5c800
 	fromColumn: bronze_manufacturing1.SKU_ID
 	toColumn: bronze_warranty1.SKU_ID
 
+relationship 552dfe79-ff77-4d15-977e-a4932fd142ca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_sales1.ingest_timestamp
+	toColumn: LocalDateTable_8ac59ed8-0521-4b33-8c9a-2fa9c340596f.Date
+
+relationship d6155b37-1cf2-4643-9866-642bd7e90bb9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_secondary_market1.ingest_timestamp
+	toColumn: LocalDateTable_8b85ef4c-1129-4908-99d4-874800e63a3f.Date
+
+relationship cd0dcec9-7ab8-47f6-b6ef-fa4df3d13dc8
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: bronze_sales1.SKU_ID
+	toColumn: bronze_secondary_market1.SKU_ID
+

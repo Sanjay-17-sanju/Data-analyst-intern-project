@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["bronze_manufacturing1","bronze_warranty1"]
+annotation PBI_QueryOrder = ["bronze_manufacturing1","bronze_warranty1","bronze_sales1","bronze_secondary_market1"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -19,4 +19,8 @@ ref table DateTableTemplate_48450a12-3ade-4cef-b62d-0c5061b99bcf
 ref table LocalDateTable_d3c80f67-d24f-4a0d-b776-772aedfc6e94
 ref table bronze_warranty1
 ref table LocalDateTable_38633c76-4504-422e-8505-ed88f233704f
+ref table bronze_sales1
+ref table LocalDateTable_8ac59ed8-0521-4b33-8c9a-2fa9c340596f
+ref table bronze_secondary_market1
+ref table LocalDateTable_8b85ef4c-1129-4908-99d4-874800e63a3f
 

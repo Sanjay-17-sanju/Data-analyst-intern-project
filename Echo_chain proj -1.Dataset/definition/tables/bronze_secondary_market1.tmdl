@@ -1,0 +1,118 @@
+table bronze_secondary_market1
+	lineageTag: 9e08df5f-76e6-476a-99bb-413a4121e9a3
+
+	column SecondaryMarket_ID
+		dataType: string
+		lineageTag: d2958d32-4131-45f9-91b8-d5d36231411a
+		summarizeBy: none
+		sourceColumn: SecondaryMarket_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SKU_ID
+		dataType: string
+		lineageTag: 1caf1e13-2082-4385-91fb-b05400f50a9c
+		summarizeBy: none
+		sourceColumn: SKU_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Original_Purchase_Date
+		dataType: string
+		lineageTag: 6357c0b3-9a54-4497-8772-51d7ef5a1cb9
+		summarizeBy: none
+		sourceColumn: Original_Purchase_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resale_Date
+		dataType: string
+		lineageTag: 52ab3d57-f5f2-477c-9a70-167d3f98c7ac
+		summarizeBy: none
+		sourceColumn: Resale_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Resale_Price
+		dataType: string
+		lineageTag: 7887e288-bf75-4ab8-ad12-46c314e2c6e9
+		summarizeBy: none
+		sourceColumn: Resale_Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column Condition
+		dataType: string
+		lineageTag: 5803fd35-2cca-4ac4-a282-8785c13415f4
+		summarizeBy: none
+		sourceColumn: Condition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seller_Type
+		dataType: string
+		lineageTag: 24c8baf7-f16a-4d8a-a322-2b63d3eb42b8
+		summarizeBy: none
+		sourceColumn: Seller_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Buyer_Type
+		dataType: string
+		lineageTag: a2619046-0806-4a22-9ecd-b0d87dcd6eff
+		summarizeBy: none
+		sourceColumn: Buyer_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Platform
+		dataType: string
+		lineageTag: 6f65a7bb-f17c-4b42-ac5d-c1b94b3633fd
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 4c73e4de-13e0-4932-b6f7-8408e1918803
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transaction_Status
+		dataType: string
+		lineageTag: b5ec651a-62d3-4a33-ba07-fde751b74112
+		summarizeBy: none
+		sourceColumn: Transaction_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ingest_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f9db3c47-76c7-44c3-b8fd-45ac087d8aed
+		summarizeBy: none
+		sourceColumn: ingest_timestamp
+
+		variation Variation
+			isDefault
+			relationship: d6155b37-1cf2-4643-9866-642bd7e90bb9
+			defaultHierarchy: LocalDateTable_8b85ef4c-1129-4908-99d4-874800e63a3f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition bronze_secondary_market1 = m
+		mode: import
+		source =
+				let
+				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
+				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
+				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
+				    bronze_secondary_market1_Table = bronze_Schema{[Name="bronze_secondary_market1",Kind="Table"]}[Data]
+				in
+				    bronze_secondary_market1_Table
+
+	annotation PBI_ResultType = Table
+

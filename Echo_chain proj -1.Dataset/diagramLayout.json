@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 121.23406634985213,
         "y": 0
       },
       "nodes": [
@@ -28,6 +28,32 @@
           },
           "nodeIndex": "bronze_warranty1",
           "nodeLineageTag": "d0d77536-0e91-413b-b084-67ca9f13f3f8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 708.23406634985224,
+            "y": 0
+          },
+          "nodeIndex": "bronze_sales1",
+          "nodeLineageTag": "f5fa92bb-6670-4c7c-854c-a14547445189",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 992.23406634985224,
+            "y": 0
+          },
+          "nodeIndex": "bronze_secondary_market1",
+          "nodeLineageTag": "9e08df5f-76e6-476a-99bb-413a4121e9a3",
           "size": {
             "height": 300,
             "width": 234
