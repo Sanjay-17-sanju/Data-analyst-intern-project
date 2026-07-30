@@ -4,59 +4,59 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 121.23406634985213,
+        "x": 0,
         "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 0,
+            "x": 302,
             "y": 0
           },
           "nodeIndex": "bronze_manufacturing1",
           "nodeLineageTag": "bf51a6af-eb66-48da-9bc1-19a180c3e6f6",
           "size": {
-            "height": 300,
+            "height": 124,
             "width": 234
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 424.23406634985224,
-            "y": 0
+            "x": 46.234066349852242,
+            "y": 227
           },
           "nodeIndex": "bronze_warranty1",
           "nodeLineageTag": "d0d77536-0e91-413b-b084-67ca9f13f3f8",
           "size": {
-            "height": 300,
-            "width": 234
+            "height": 134,
+            "width": 177
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 708.23406634985224,
-            "y": 0
+            "x": 309.23406634985224,
+            "y": 225
           },
           "nodeIndex": "bronze_sales1",
           "nodeLineageTag": "f5fa92bb-6670-4c7c-854c-a14547445189",
           "size": {
-            "height": 300,
-            "width": 234
+            "height": 137,
+            "width": 204
           },
           "zIndex": 0
         },
         {
           "location": {
-            "x": 992.23406634985224,
-            "y": 0
+            "x": 611.23406634985224,
+            "y": 218
           },
           "nodeIndex": "bronze_secondary_market1",
           "nodeLineageTag": "9e08df5f-76e6-476a-99bb-413a4121e9a3",
           "size": {
-            "height": 300,
-            "width": 234
+            "height": 133,
+            "width": 212
           },
           "zIndex": 0
         }

@@ -30,3 +30,16 @@ relationship cd0dcec9-7ab8-47f6-b6ef-fa4df3d13dc8
 	fromColumn: bronze_sales1.SKU_ID
 	toColumn: bronze_secondary_market1.SKU_ID
 
+relationship 4ab33581-9fa8-4185-8e2d-63fb3a1cdc0d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: bronze_manufacturing1.SKU_ID
+	toColumn: bronze_sales1.SKU_ID
+
+relationship ec20ec34-21d5-4a53-a1e0-8d910578234d
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: bronze_manufacturing1.SKU_ID
+	toColumn: bronze_secondary_market1.SKU_ID
+
