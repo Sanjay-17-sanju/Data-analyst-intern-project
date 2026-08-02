@@ -1,6 +1,11 @@
 table bronze_manufacturing1
 	lineageTag: bf51a6af-eb66-48da-9bc1-19a180c3e6f6
 
+	measure 'Total manufacturing Cost' = SUM(bronze_manufacturing1[Manufacturing_Cost])
+		lineageTag: 899e7f9b-30a0-44da-accd-9cc13ed0e4cf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SKU_ID
 		dataType: string
 		lineageTag: 12c3a992-4c80-44fc-97df-265e556e7097

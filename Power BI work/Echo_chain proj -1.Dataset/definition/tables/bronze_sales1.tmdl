@@ -1,11 +1,10 @@
 table bronze_sales1
 	lineageTag: f5fa92bb-6670-4c7c-854c-a14547445189
 
-	measure 'Total Revenue' = ```
-			SUM(bronze_sales1[Final_Amount]) 
-			```
-		formatString: 0
-		lineageTag: 72c85bee-3076-4d9e-a477-a6e8f97c9ea1
+	measure 'Total Revenue' = SUM(bronze_sales1[Final_Amount])
+		lineageTag: 234687ec-68a1-495e-a16f-d94262b8b85c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Sales_ID
 		dataType: string
@@ -93,15 +92,15 @@ table bronze_sales1
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Final_Amount
-		dataType: decimal
-		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		dataType: double
+		formatString: #,0
 		lineageTag: 28e466a3-f453-4413-9e9b-fadc4c6b947d
 		summarizeBy: sum
 		sourceColumn: Final_Amount
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
 
-		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+		annotation SummarizationSetBy = Automatic
 
 	column Payment_Method
 		dataType: string
