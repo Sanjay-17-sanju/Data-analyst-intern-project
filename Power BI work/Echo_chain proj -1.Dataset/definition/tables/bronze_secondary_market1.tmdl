@@ -18,28 +18,47 @@ table bronze_secondary_market1
 		annotation SummarizationSetBy = Automatic
 
 	column Original_Purchase_Date
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 6357c0b3-9a54-4497-8772-51d7ef5a1cb9
 		summarizeBy: none
 		sourceColumn: Original_Purchase_Date
 
+		variation Variation
+			isDefault
+			relationship: d21bbc02-613a-4036-a86b-a77c0b753357
+			defaultHierarchy: LocalDateTable_c78f9d6a-a1f3-4876-9c4f-a473d4e8ddee.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column Resale_Date
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 52ab3d57-f5f2-477c-9a70-167d3f98c7ac
 		summarizeBy: none
 		sourceColumn: Resale_Date
 
+		variation Variation
+			isDefault
+			relationship: 195260be-49b0-4c48-9105-95378a59bf6e
+			defaultHierarchy: LocalDateTable_e42b0b88-ceaa-4f6d-b1df-2ab5106185ad.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column Resale_Price
-		dataType: string
+		dataType: decimal
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
 		lineageTag: 7887e288-bf75-4ab8-ad12-46c314e2c6e9
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Resale_Price
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
 
 	column Condition
 		dataType: string
@@ -110,9 +129,12 @@ table bronze_secondary_market1
 				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
 				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
 				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
-				    bronze_secondary_market1_Table = bronze_Schema{[Name="bronze_secondary_market1",Kind="Table"]}[Data]
+				    bronze_secondary_market1_Table = bronze_Schema{[Name="bronze_secondary_market1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(bronze_secondary_market1_Table,{{"Resale_Price", Currency.Type}, {"Resale_Date", type date}, {"Original_Purchase_Date", type date}})
 				in
-				    bronze_secondary_market1_Table
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

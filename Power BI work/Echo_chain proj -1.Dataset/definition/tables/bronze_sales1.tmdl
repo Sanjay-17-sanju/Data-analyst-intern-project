@@ -1,6 +1,12 @@
 table bronze_sales1
 	lineageTag: f5fa92bb-6670-4c7c-854c-a14547445189
 
+	measure 'Total Revenue' = ```
+			SUM(bronze_sales1[Final_Amount]) 
+			```
+		formatString: 0
+		lineageTag: 72c85bee-3076-4d9e-a477-a6e8f97c9ea1
+
 	column Sales_ID
 		dataType: string
 		lineageTag: 758489b4-7f4e-489a-bf26-dd0531f6c94e
@@ -18,12 +24,20 @@ table bronze_sales1
 		annotation SummarizationSetBy = Automatic
 
 	column Sale_Date
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 5e1508a0-8b4f-49ee-905f-d7a010fa8883
 		summarizeBy: none
 		sourceColumn: Sale_Date
 
+		variation Variation
+			isDefault
+			relationship: 949f6503-eef9-4444-9083-46c2fa089cbc
+			defaultHierarchy: LocalDateTable_51bbc909-a075-4301-8bc3-7585c223b49f.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column Store_ID
 		dataType: string
@@ -79,12 +93,15 @@ table bronze_sales1
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Final_Amount
-		dataType: string
+		dataType: decimal
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
 		lineageTag: 28e466a3-f453-4413-9e9b-fadc4c6b947d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Final_Amount
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
 
 	column Payment_Method
 		dataType: string
@@ -115,9 +132,12 @@ table bronze_sales1
 				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
 				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
 				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
-				    bronze_sales1_Table = bronze_Schema{[Name="bronze_sales1",Kind="Table"]}[Data]
+				    bronze_sales1_Table = bronze_Schema{[Name="bronze_sales1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(bronze_sales1_Table,{{"Final_Amount", Currency.Type}, {"Sale_Date", type date}})
 				in
-				    bronze_sales1_Table
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

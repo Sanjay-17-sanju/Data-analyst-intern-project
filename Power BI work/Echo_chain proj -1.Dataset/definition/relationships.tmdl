@@ -43,3 +43,28 @@ relationship ec20ec34-21d5-4a53-a1e0-8d910578234d
 	fromColumn: bronze_manufacturing1.SKU_ID
 	toColumn: bronze_secondary_market1.SKU_ID
 
+relationship ffeaaf2f-e25e-48d1-a13d-06ee7864920b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_manufacturing1.Manufacturing_Date
+	toColumn: LocalDateTable_2f46a25e-e3bf-4f78-b026-0db7cf037447.Date
+
+relationship d073b9b2-7071-4f70-85f8-2780e1affa1a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_warranty1.Manufacturing_Date
+	toColumn: LocalDateTable_2413e6ec-9890-4b87-84f4-8306d6079551.Date
+
+relationship 949f6503-eef9-4444-9083-46c2fa089cbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_sales1.Sale_Date
+	toColumn: LocalDateTable_51bbc909-a075-4301-8bc3-7585c223b49f.Date
+
+relationship d21bbc02-613a-4036-a86b-a77c0b753357
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_secondary_market1.Original_Purchase_Date
+	toColumn: LocalDateTable_c78f9d6a-a1f3-4876-9c4f-a473d4e8ddee.Date
+
+relationship 195260be-49b0-4c48-9105-95378a59bf6e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: bronze_secondary_market1.Resale_Date
+	toColumn: LocalDateTable_e42b0b88-ceaa-4f6d-b1df-2ab5106185ad.Date
+

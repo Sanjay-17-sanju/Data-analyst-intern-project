@@ -34,12 +34,20 @@ table bronze_manufacturing1
 		annotation SummarizationSetBy = Automatic
 
 	column Manufacturing_Date
-		dataType: string
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 9e629744-da8e-471c-8822-71c618e4c1ba
 		summarizeBy: none
 		sourceColumn: Manufacturing_Date
 
+		variation Variation
+			isDefault
+			relationship: ffeaaf2f-e25e-48d1-a13d-06ee7864920b
+			defaultHierarchy: LocalDateTable_2f46a25e-e3bf-4f78-b026-0db7cf037447.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column Component
 		dataType: string
@@ -50,12 +58,14 @@ table bronze_manufacturing1
 		annotation SummarizationSetBy = Automatic
 
 	column Component_Cost
-		dataType: string
+		dataType: double
 		lineageTag: e66a5f8e-558c-4c2d-b6eb-650a127c9aff
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Component_Cost
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Warranty_Period
 		dataType: int64
@@ -77,12 +87,14 @@ table bronze_manufacturing1
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Manufacturing_Cost
-		dataType: string
+		dataType: double
 		lineageTag: b7abecc5-7c2e-4c05-abc3-7dc6e8150a2e
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Manufacturing_Cost
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column ingest_timestamp
 		dataType: dateTime
@@ -105,9 +117,12 @@ table bronze_manufacturing1
 				    Source = Databricks.Catalogs("dbc-dc58b86b-97ca.cloud.databricks.com", "/sql/1.0/warehouses/68717cf9944c8ae8", [Catalog=null, Database=null, EnableAutomaticProxyDiscovery=null]),
 				    #"echo_chain_proj-1_Database" = Source{[Name="echo_chain_proj-1",Kind="Database"]}[Data],
 				    bronze_Schema = #"echo_chain_proj-1_Database"{[Name="bronze",Kind="Schema"]}[Data],
-				    bronze_manufacturing1_Table = bronze_Schema{[Name="bronze_manufacturing1",Kind="Table"]}[Data]
+				    bronze_manufacturing1_Table = bronze_Schema{[Name="bronze_manufacturing1",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(bronze_manufacturing1_Table,{{"Manufacturing_Date", type date}, {"Component_Cost", type number}, {"Manufacturing_Cost", type number}})
 				in
-				    bronze_manufacturing1_Table
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
