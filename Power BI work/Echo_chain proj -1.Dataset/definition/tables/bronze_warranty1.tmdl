@@ -1,6 +1,11 @@
 table bronze_warranty1
 	lineageTag: d0d77536-0e91-413b-b084-67ca9f13f3f8
 
+	measure 'Average Failure Rate' = AVERAGE(bronze_warranty1[Failure_Rate])
+		lineageTag: e088ac85-9968-4220-a25d-8a45abdb511d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SKU_ID
 		dataType: string
 		lineageTag: 260682b4-3ec4-4fac-80fb-623ee2cac315

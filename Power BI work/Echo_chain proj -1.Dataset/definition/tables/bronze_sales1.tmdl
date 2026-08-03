@@ -16,6 +16,19 @@ table bronze_sales1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Total Transaction' = COUNT(bronze_sales1[Sales_ID])
+		formatString: 0
+		lineageTag: 05eb8fde-29ac-400c-9c11-ac3b31db9caf
+
+	measure 'Total Quantity Sold' = SUM(bronze_sales1[Quantity])
+		formatString: 0
+		lineageTag: d5393c61-3611-42a4-b93a-7f8edeab3a9e
+
+	measure 'Average Discount' = AVERAGE(bronze_sales1[Discount])
+		lineageTag: abd84360-4787-4668-a12b-2b180ffa0f61
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Sales_ID
 		dataType: string
 		lineageTag: 758489b4-7f4e-489a-bf26-dd0531f6c94e

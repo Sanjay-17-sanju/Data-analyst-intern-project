@@ -1,6 +1,12 @@
 table bronze_secondary_market1
 	lineageTag: 9e08df5f-76e6-476a-99bb-413a4121e9a3
 
+	measure 'Average Resales Price' = AVERAGE(bronze_secondary_market1[Resale_Price])
+		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		lineageTag: 12021e9e-6e1e-4eaf-9bab-8e11efab2b74
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+
 	column SecondaryMarket_ID
 		dataType: string
 		lineageTag: d2958d32-4131-45f9-91b8-d5d36231411a

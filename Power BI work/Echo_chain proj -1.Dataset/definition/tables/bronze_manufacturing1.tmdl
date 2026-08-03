@@ -6,6 +6,11 @@ table bronze_manufacturing1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Average Manufacturing Cost' = AVERAGE(bronze_manufacturing1[Manufacturing_Cost])
+		lineageTag: 3697d592-e037-43eb-b1e9-302881961228
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column SKU_ID
 		dataType: string
 		lineageTag: 12c3a992-4c80-44fc-97df-265e556e7097
