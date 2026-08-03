@@ -6,6 +6,16 @@ table bronze_sales1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Measure
+		lineageTag: c3c242ca-6dee-4c75-ae32-044e9199ca3b
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Average Revenue' = AVERAGE(bronze_sales1[Final_Amount])
+		lineageTag: dbb084e5-1cd8-4b33-aadc-a53de7aae3c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Sales_ID
 		dataType: string
 		lineageTag: 758489b4-7f4e-489a-bf26-dd0531f6c94e
