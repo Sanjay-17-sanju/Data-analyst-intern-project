@@ -1,11 +1,10 @@
 table bronze_secondary_market1
 	lineageTag: 9e08df5f-76e6-476a-99bb-413a4121e9a3
 
-	measure 'Average Resales Price' = AVERAGE(bronze_secondary_market1[Resale_Price])
-		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
-		lineageTag: 12021e9e-6e1e-4eaf-9bab-8e11efab2b74
+	measure 'Average Resale Price' = AVERAGE(bronze_secondary_market1[Resale_Price])
+		lineageTag: 47fe11c9-a8a2-456c-b0ba-b41a0a811c01
 
-		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column SecondaryMarket_ID
 		dataType: string
@@ -56,15 +55,15 @@ table bronze_secondary_market1
 		annotation UnderlyingDateTimeDataType = Date
 
 	column Resale_Price
-		dataType: decimal
-		formatString: "₹"\ #,0.###############;#,0.###############\ -"₹";"₹"\ #,0.###############
+		dataType: int64
+		formatString: #,0
 		lineageTag: 7887e288-bf75-4ab8-ad12-46c314e2c6e9
 		summarizeBy: sum
 		sourceColumn: Resale_Price
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
 
-		annotation PBI_FormatHint = {"currencyCulture":"en-IN"}
+		annotation SummarizationSetBy = Automatic
 
 	column Condition
 		dataType: string
