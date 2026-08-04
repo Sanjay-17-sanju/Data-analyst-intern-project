@@ -1,5 +1,5 @@
 {
-  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.51\",\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.51\",\"type\":2}},\"activeSectionIndex\":4,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
   "layoutOptimization": 0,
   "resourcePackages": [
     {
@@ -181,6 +181,153 @@
           "x": 348.00,
           "y": 360.00,
           "z": 4000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Secondary_market_Dashboard",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection62288a52580601691d6d",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0f9fe421dc150da35b61\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1108.8,\"y\":113.76,\"z\":16,\"width\":158.4,\"height\":90.72,\"tabOrder\":16}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.City\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"City\"},\"Name\":\"bronze_secondary_market1.City\",\"NativeReferenceName\":\"City\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"header\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 90.72,
+          "width": 158.40,
+          "x": 1108.80,
+          "y": 113.76,
+          "z": 16.00
+        },
+        {
+          "config": "{\"name\":\"122a604ee025ebdd970b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":948.96,\"y\":113.76,\"z\":15,\"width\":148.32,\"height\":90.72,\"tabOrder\":15}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.Buyer_Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Buyer_Type\"},\"Name\":\"bronze_secondary_market1.Buyer_Type\",\"NativeReferenceName\":\"Buyer_Type\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"header\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 90.72,
+          "width": 148.32,
+          "x": 948.96,
+          "y": 113.76,
+          "z": 15.00
+        },
+        {
+          "config": "{\"name\":\"15f8edb73296bb6d44ab\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":511.20000000000005,\"z\":10,\"width\":371.52000000000004,\"height\":208.8,\"tabOrder\":10}}],\"singleVisual\":{\"visualType\":\"hundredPercentStackedBarChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(bronze_secondary_market1.Resale_Price)\"}],\"Category\":[{\"queryRef\":\"bronze_secondary_market1.Buyer_Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":0},\"Name\":\"Sum(bronze_secondary_market1.Resale_Price)\",\"NativeReferenceName\":\"Sum of Resale_Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Buyer_Type\"},\"Name\":\"bronze_secondary_market1.Buyer_Type\",\"NativeReferenceName\":\"Buyer_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 208.80,
+          "width": 371.52,
+          "x": 0.00,
+          "y": 511.20,
+          "z": 10.00
+        },
+        {
+          "config": "{\"name\":\"1e21ba4a0a07059dd1e6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":358.56,\"y\":89.28,\"z\":6,\"width\":187.20000000000002,\"height\":115.2,\"tabOrder\":6}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(bronze_secondary_market1.Transaction_Status)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Transaction_Status\"}},\"Function\":5},\"Name\":\"Min(bronze_secondary_market1.Transaction_Status)\",\"NativeReferenceName\":\"Count of Transaction_Status1\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Transaction_Status\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Succesful Transaction'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"Filter7c0de7907a3d964e41ee\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"bronze_secondary_market1\"}},\"Property\":\"Transaction_Status\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Transaction_Status\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Completed'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{}}]}}]",
+          "height": 115.20,
+          "width": 187.20,
+          "x": 358.56,
+          "y": 89.28,
+          "z": 6.00
+        },
+        {
+          "config": "{\"name\":\"2433efb20eee9eb0b96c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":381.6,\"y\":511.20000000000005,\"z\":9,\"width\":371.52000000000004,\"height\":208.8,\"tabOrder\":9}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"bronze_secondary_market1.Seller_Type\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(bronze_secondary_market1.Resale_Price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Seller_Type\"},\"Name\":\"bronze_secondary_market1.Seller_Type\",\"NativeReferenceName\":\"Seller_Type\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":0},\"Name\":\"Sum(bronze_secondary_market1.Resale_Price)\",\"NativeReferenceName\":\"Sum of Resale_Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 208.80,
+          "width": 371.52,
+          "x": 381.60,
+          "y": 511.20,
+          "z": 9.00
+        },
+        {
+          "config": "{\"name\":\"4080d563d75ceab01204\",\"layouts\":[{\"id\":0,\"position\":{\"x\":558.72,\"y\":87.84,\"z\":4,\"width\":181.44,\"height\":116.64,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Min(bronze_secondary_market1.Platform)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Platform\"}},\"Function\":2},\"Name\":\"Min(bronze_secondary_market1.Platform)\",\"NativeReferenceName\":\"Count of Platform\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Platform\"}},\"Function\":2}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total Platform'\"}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 116.64,
+          "width": 181.44,
+          "x": 558.72,
+          "y": 87.84,
+          "z": 4.00
+        },
+        {
+          "config": "{\"name\":\"5085e96ad3b30d4009db\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.08,\"y\":223.20000000000002,\"z\":8,\"width\":535.6800000000001,\"height\":273.6,\"tabOrder\":8}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"bronze_secondary_market1.Average Resale Price\"}],\"Category\":[{\"queryRef\":\"bronze_secondary_market1.Condition\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"},\"Name\":\"bronze_secondary_market1.Average Resale Price\",\"NativeReferenceName\":\"Average Resale Price\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Condition\"},\"Name\":\"bronze_secondary_market1.Condition\",\"NativeReferenceName\":\"Condition\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"valueAxis\":[{\"properties\":{\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 273.60,
+          "width": 535.68,
+          "x": 10.08,
+          "y": 223.20,
+          "z": 8.00
+        },
+        {
+          "config": "{\"name\":\"b3ce6f65006de77c702a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":558.72,\"y\":223.20000000000002,\"z\":7,\"width\":708.48,\"height\":273.6,\"tabOrder\":7}}],\"singleVisual\":{\"visualType\":\"columnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"bronze_secondary_market1.Platform\",\"active\":true}],\"Y\":[{\"queryRef\":\"bronze_secondary_market1.Average Resale Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Platform\"},\"Name\":\"bronze_secondary_market1.Platform\",\"NativeReferenceName\":\"Platform\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"},\"Name\":\"bronze_secondary_market1.Average Resale Price\",\"NativeReferenceName\":\"Average Resale Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"gridlineShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"titleBold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleFontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"labels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 273.60,
+          "width": 708.48,
+          "x": 558.72,
+          "y": 223.20,
+          "z": 7.00
+        },
+        {
+          "config": "{\"name\":\"b8bfbdaf109b3197e140\",\"layouts\":[{\"id\":0,\"position\":{\"x\":766.08,\"y\":511.20000000000005,\"z\":11,\"width\":501.12,\"height\":208.8,\"tabOrder\":11}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"bronze_secondary_market1.Transaction_Status\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(bronze_secondary_market1.Seller_Type)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Transaction_Status\"},\"Name\":\"bronze_secondary_market1.Transaction_Status\",\"NativeReferenceName\":\"Transaction_Status\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Seller_Type\"}},\"Function\":5},\"Name\":\"CountNonNull(bronze_secondary_market1.Seller_Type)\",\"NativeReferenceName\":\"Count of Seller_Type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Seller_Type\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"title\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 208.80,
+          "width": 501.12,
+          "x": 766.08,
+          "y": 511.20,
+          "z": 11.00
+        },
+        {
+          "config": "{\"name\":\"c7dc00c34009b064183a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.08,\"y\":87.84,\"z\":2,\"width\":146.88,\"height\":116.64,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.Average Resale Price\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"},\"Name\":\"bronze_secondary_market1.Average Resale Price\",\"NativeReferenceName\":\"Average Resale Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Average Resale Price\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Avg Resale Price'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 116.64,
+          "width": 146.88,
+          "x": 10.08,
+          "y": 87.84,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"cfcd9b4d4e0d2c07da74\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10.08,\"y\":0,\"z\":0,\"width\":730.08,\"height\":86.4,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"SECONDARY MARKET ANALYSIS\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"24pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 86.40,
+          "width": 730.08,
+          "x": 10.08,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e0d325471892cc1e29d4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1023.84,\"y\":11.52,\"z\":13,\"width\":243.36,\"height\":89.28,\"tabOrder\":13}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.Condition\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Condition\"},\"Name\":\"bronze_secondary_market1.Condition\",\"NativeReferenceName\":\"Condition\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.28,
+          "width": 243.36,
+          "x": 1023.84,
+          "y": 11.52,
+          "z": 13.00
+        },
+        {
+          "config": "{\"name\":\"f055ec01734ec180066a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":779.0400000000001,\"y\":113.76,\"z\":14,\"width\":152.64000000000001,\"height\":90.72,\"tabOrder\":14}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.Seller_Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Seller_Type\"},\"Name\":\"bronze_secondary_market1.Seller_Type\",\"NativeReferenceName\":\"Seller_Type\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"header\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 90.72,
+          "width": 152.64,
+          "x": 779.04,
+          "y": 113.76,
+          "z": 14.00
+        },
+        {
+          "config": "{\"name\":\"f07add098a7bb92b837a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":168.48000000000002,\"y\":87.84,\"z\":3,\"width\":180,\"height\":116.64,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Sum(bronze_secondary_market1.Resale_Price)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":4},\"Name\":\"Sum(bronze_secondary_market1.Resale_Price)\",\"NativeReferenceName\":\"Max of Resale_Price\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Resale_Price\"}},\"Function\":4}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"0L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Highest Resale Price'\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 116.64,
+          "width": 180.00,
+          "x": 168.48,
+          "y": 87.84,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"f6b1f62db5dbe266c4a0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":779.0400000000001,\"y\":11.52,\"z\":12,\"width\":231.84,\"height\":89.28,\"tabOrder\":12}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"bronze_secondary_market1.Platform\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"bronze_secondary_market1\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"Platform\"},\"Name\":\"bronze_secondary_market1.Platform\",\"NativeReferenceName\":\"Platform\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"header\":[{\"properties\":{\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"general\":[{\"properties\":{}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 89.28,
+          "width": 231.84,
+          "x": 779.04,
+          "y": 11.52,
+          "z": 12.00
         }
       ],
       "width": 1280.00
